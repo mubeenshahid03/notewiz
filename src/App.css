@@ -1,38 +1,148 @@
-.App {
+.menu-Icon {
+  display: none;
+}
+#form-design {
+  /* width: 400px; */
+  height: auto;
+  margin-left: 40%;
+  background-color: #83c5be;
+  margin-top: 50px;
+}
+#main-form {
+  /* background-color: blue; */
+  height: 70%;
+  width: 90%;
+  margin: auto;
+}
+body {
+  background-color: #edf6f9;
+}
+/* adding custom styles to modal of edit */
+.custom-modal .ant-modal-content {
+  background-color: #83c5be; /* Set your desired background color */
+}
+.alert-banner {
+  width: 100%;
+}
+.note-items {
+  background-color: white;
+}
+/* //custom csss to spinner */
+.custom-spinner .ant-spin-dot {
+  color: #006d77;
+}
+#note-empty-message{
+  width: 100%;
+  height: 50px;
+}
+#notewiz-heading{
+  margin-left: -60px;
+}
+
+
+
+/* adding styles for footer */
+#footer {
+  height: 320px;
+  width: 100%;
+  background-color: #006d77;
+  opacity: 0.9;
+}
+
+#h4fot {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+#subfot {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+#fota {
+  color: white;
+  width: 60%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#fotb {
+  color: white;
+  width: 20%;
+  height: auto;
+}
+#fotc {
+  color: white;
+  width: 20%;
+  height: auto;
+}
+#fotd {
+  color: white;
+  width: 20%;
+  height: auto;
+}
+#fotrp {
+  font-size: larger;
+  text-align: center;
+}
+#version {
+  text-align: center;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+#hra {
+  width: 80%;
+  height: auto;
+  border-top: 1px solid white;
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 0px) and (max-width: 500px) {
+  .menu-Icon {
+    display: block;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .app-Menu {
+    display: none;
+  }
+  #form-design {
+    height: auto;
+
+    margin: auto;
+    margin-left: -20px;
+  }
+  .alert-banner {
+    width: 105%;
+  }
+  #note-empty-message{
+    width: 105%;
+    height: 50px;
+  }
+
+
+  /* styles for footer */
+  #footer {
+    height: 300px;
+    width: 105%;
+    background-color: #006d77;
+    opacity: 0.9;
+  }
+  #fo {
+    width: 300px;
+  }
+  #maini {
+    width: 80%;
+  }
+  #fotrp {
+    font-size: small;
+  }
+  .pro {
+    font-size: x-small;
+  }
+  #h4fot {
+    font-weight: 600;
   }
 }

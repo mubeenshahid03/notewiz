@@ -1,24 +1,54 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Navbar';
+import Home from './Components/Home';
+import About from './Components/About';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NoteState from './context/notes/NoteState';
+import Login from './Components/Login';
+import Registeration from './Components/Registeration';
+import Logout from './Components/Logout';
+import Alertbanner from './Components/Alertbanner'
+import { useState } from 'react';
+import Footer from './Components/Footer';
 
 function App() {
+//functionality for foooter it will only diplsay when user have token
+const isLoggedIn = localStorage.getItem("token");
+
+//making a global stat for alert and global function that set values we pass in function in alert state
+const [alert, setAlert] = useState(null)
+
+const showalert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type
+
+    })
+    setTimeout(() => {
+      setAlert(null)
+    }, 3000);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <NoteState>
+    <Router>
+    <Navbar />
+    
+    {/* i make comment to alert component for later use and understanding how to use it */}
+    {/* <div style={{height:"30px",width:"100%"}}>
+    <Alertbanner alert={alert}/>
+    </div> */}
+    <Routes>
+    <Route  exact path='/' element={ <Home showalert={showalert}  /> }/>
+    <Route  exact path='/about' element={  <About /> }/>
+    <Route exact path='/login' element={<Login showalert={showalert } />} />
+    <Route exact path='/register' element={<Registeration Login showalert={showalert } />} />
+    <Route exact path='/logout' element={<Logout />} />
+    </Routes>
+    </Router>
+    {isLoggedIn && <Footer />} {/* Render Footer only if the user is logged in */}
+    </NoteState>
+    </>
   );
 }
 
