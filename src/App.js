@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import About from './Components/About';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route ,Navigate } from 'react-router-dom';
 import NoteState from './context/notes/NoteState';
 import Login from './Components/Login';
 import Registeration from './Components/Registeration';
@@ -39,7 +39,7 @@ const showalert = (message, type) => {
     <Alertbanner alert={alert}/>
     </div> */}
     <Routes>
-    <Route  exact path='/' element={ <Home showalert={showalert}  /> }/>
+    <Route path='/' element={isLoggedIn ? <Home showalert={showalert} /> : <Navigate to='/login' />} />
     <Route  exact path='/about' element={  <About /> }/>
     <Route exact path='/login' element={<Login showalert={showalert } />} />
     <Route exact path='/register' element={<Registeration Login showalert={showalert } />} />
